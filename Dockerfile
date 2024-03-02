@@ -16,7 +16,7 @@ RUN apt-get update \
 RUN docker-php-ext-configure gd --with-freetype --with-jpeg --with-webp \
     && docker-php-ext-install -j$(nproc) gd \
     && docker-php-ext-install pdo_mysql \
-    && docker-php-ext-install zip && docker-php-ext-install bcmath
+    && docker-php-ext-install zip && docker-php-ext-install bcmath && pecl install redis && docker-php-ext-enable redis
 
 # 设置工作目录
 #WORKDIR /var/www/html

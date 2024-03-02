@@ -26,11 +26,11 @@ return [
             // 服务器地址
             'hostname'        => env('database.hostname', 'mysql'),
             // 数据库名
-            'database'        => env('database.database', ''),
+            'database'        => env('database.database', getenv('DB_NAME')),
             // 用户名
-            'username'        => env('database.username', 'root'),
+            'username'        => env('database.username', getenv('DB_USER')),
             // 密码
-            'password'        => env('database.password', ''),
+            'password'        => env('database.password', getenv('DB_PASSWORD')),
             // 端口
             'hostport'        => env('database.hostport', '3306'),
             // 数据库连接参数
